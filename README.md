@@ -1,71 +1,78 @@
-Intelligent Traffic Management Using FPGA and Computer Vision
+# 🚦 Intelligent Traffic Management Using FPGA and Computer Vision
 
-Team Matrix - Electro Hack
+**Team Name:** MATRIX  
+**Event Name:** ELECTRO HACK  
+**Project Title:** Intelligent Traffic Management Using FPGA and Computer Vision  
 
-Project Overview
+## 📌 Overview
+Urbanization in metro cities like Delhi, Mumbai, Chennai, and Bengaluru has led to increased traffic congestion, delays, and pollution. This project aims to implement an **FPGA-based smart traffic management system** using **Verilog, YOLO, and OpenCV** to optimize traffic flow dynamically.
 
-This project presents an Intelligent Traffic Management System leveraging FPGA and Computer Vision to address urban congestion challenges. The system integrates Verilog-based FPGA logic with real-time traffic analysis using YOLO and OpenCV, ensuring optimized signal control for metropolitan cities.
+---
 
-Key Features
+## 🛠 Implementation
 
-Smart Traffic Signal Algorithm: Implemented using Verilog FSMs for dynamic signal control.
+### 🔹 Traffic Algorithm
+- **One lane 2-way**: Alternating traffic flow between lanes.
+- **2-lane 4-way intersection**: Uses a **Finite State Machine (FSM)** to manage lane priority and traffic signal switching efficiently.
 
-FPGA-Based Processing: Utilizing Altera Cyclone IV E (DE2-115) for real-time signal adjustments.
+🔗 **Reference:** [How Do Traffic Signals Work?](https://www.youtube.com/watch?v=DP62ogEZgkI)
 
-Traffic Analysis with YOLO & OpenCV: Enables real-time vehicle detection and classification.
+### 🔹 FPGA Implementation
+The FPGA processes traffic data from **Python-based traffic analysis** and adjusts signal timings dynamically.
+- **Software Used:** AMD Vivado, Intel Quartus Prime v23.0
+- **Hardware:** Altera Cyclone IV E (DE2-115), USB Blaster
+- **OS:** Windows 11
 
-Adaptive Control: Dynamically adjusts signal durations based on traffic density.
+🔗 **Cyclone IV E User Manual:** [Click Here](https://www.terasic.com.tw/attachment/archive/502/DE2_115_User_manual.pdf)
 
-Multi-Class Detection: Identifies cars, buses, motorcycles, and pedestrians.
+### 🔹 Verilog-Based Smart Traffic Controller
+**Repository:** [GitHub](https://github.com/JayaKushal24/ElectroHack)
 
-Implementation Details
+#### ⚡ Core Modules:
+1. **Traffic Controller (Main Unit)** - Manages signal timing and state transitions.
+2. **Reset Module** - Implements a delayed reset to prevent instability.
+3. **1Hz Clock Generator** - Derives a low-frequency clock for real-world timing.
+4. **State Machine** - Controls **Green-Yellow-Red** transitions dynamically based on traffic density.
 
-1. FPGA-Based Traffic Signal Control
+---
 
-Developed using Verilog and tested on AMD Vivado & Intel Quartus Prime v23.0.
+## 🚗 Traffic Analysis Using YOLO and OpenCV
 
-Implements a 4-state FSM controlling two-lane, four-way intersections.
+### 🤖 Why YOLO?
+- **Real-time Object Detection** 🕒
+- **High Accuracy & Lightweight Models**
+- **Multi-Class Detection (Cars, Bikes, Pedestrians, etc.)**
+- **Scalability and Flexibility**
 
-Uses clock divider logic to generate 1 Hz signal for real-time transitions.
+### 🏎 Why OpenCV?
+- **Preprocessing (Resizing, Filtering, Noise Reduction)**
+- **Video Capture & Streaming (IP/USB Cameras)**
+- **Post-processing (Bounding Boxes, Annotations, Visualization)**
 
-2. Computer Vision-Based Traffic Analysis
+### 🔗 How YOLO & OpenCV Work Together:
+1. **OpenCV** captures and preprocesses video.
+2. **YOLO** detects vehicles and objects.
+3. **OpenCV** overlays bounding boxes and visualizes real-time results.
 
-YOLO Model: Performs real-time vehicle detection.
+---
 
-OpenCV Processing: Handles image preprocessing, video capture, and visualization.
+## 🖥 Python-FPGA Communication
+### 📡 UART-Based Communication
+- Transfers Python-generated traffic data to the FPGA via a **USB-to-UART** cable.
+- FPGA processes input using a **Nios II soft-core processor** or **custom logic**.
 
-Dynamic Frame Capture: Reduces computational overhead by processing frames based on traffic density.
+### 🌐 Ethernet-Based Communication
+- Uses **TCP/IP or UDP sockets** to send data from Python to FPGA.
+- FPGA receives data, processes it, and updates traffic light logic dynamically.
 
-Masking Strategy: Focuses analysis on lanes and intersections.
+---
 
-Hardware Acceleration: Exploring GPU support to enhance real-time performance.
+## 🎯 Key Features
+✅ **Real-time Traffic Monitoring**  
+✅ **FPGA-Based Signal Control**  
+✅ **Optimized for Metropolitan Traffic**  
+✅ **YOLO & OpenCV for Vehicle Detection**  
+✅ **Python-FPGA Data Transfer via UART/Ethernet**  
 
-3. Communication Between FPGA & Python
-
-UART Communication: Transfers processed data from Python to FPGA for signal control.
-
-Ethernet-Based Data Transfer: Uses TCP/IP or UDP communication for high-speed data exchange.
-
-Tools & Technologies Used
-
-Software: AMD Vivado, Intel Quartus Prime
-
-Hardware: Altera Cyclone IV E (DE2-115), USB Blaster
-
-Libraries: OpenCV, YOLO, pySerial, socket (for Ethernet communication)
-
-OS: Windows 11
-
-Repository
-
-GitHub Repository: ElectroHack
-
-Future Improvements
-
-Integration with IoT for remote traffic monitoring.
-
-Real-time traffic prediction using AI models.
-
-Further optimization of FPGA resource usage.
-
-For more details, check out the full project documentation in the repository.
+🚀 **Developed by Team MATRIX**  
+📂 **Repository:** [GitHub - ElectroHack](https://github.com/JayaKushal24/ElectroHack)
