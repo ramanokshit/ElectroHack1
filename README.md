@@ -1,6 +1,6 @@
 # 🚦 Intelligent Traffic Management Using FPGA and Computer Vision
 
-**Team Name:** MATRIX (Nokshit Rama, Jaya Kushal, Ravi Teja, Yokeshwar Reddy, Mohammed Nabeel)
+**Team Name:** MATRIX (Nokshit Rama, Jaya Kushal, Ravi Teja, Yokeshwar Reddy, Mohammed Nabeel)  
 **Event Name:** ELECTRO HACK  
 **Project Title:** Intelligent Traffic Management Using FPGA and Computer Vision  
 
